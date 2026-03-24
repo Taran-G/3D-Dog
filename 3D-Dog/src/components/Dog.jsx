@@ -1,7 +1,10 @@
 import React from 'react'
-import {Canvas} from '@react-three/fiber'
+import {Canvas,useThree} from '@react-three/fiber'
 
 const Dog = () => {
+     useThree(({Camera,Scene,GL})=>{
+        
+     })
   return (
     <Canvas>
         <mesh>
