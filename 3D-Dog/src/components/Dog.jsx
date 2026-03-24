@@ -11,6 +11,8 @@ const Dog = () => {
         gl.outputColorSpace = Three.SRGBColorSpace
 
              })
+               
+
      const model = useGLTF('/models/dog.drc.glb')
 
      const {actions} = useAnimations(model.animations,model.scene)
@@ -26,22 +28,35 @@ const Dog = () => {
         }()=>{
             texture.normalMap.flipY = false;
         texture .sampleMatCap.colorSpace = Three.SRGBColorSpace
+
         })*/
        const [normalMap,sampleMatCap] = useTexture(["models/dog_normals.jpg","models/matcap/mat-1.png"]).map(texture =>{
             texture.flipY = false;
             texture.colorSpace = Three.SRGBColorSpace
             return texture;
        })
+       const [ branchMap, branchNormalMap ] = (useTexture([ "models/branches_diffuse.jpeg", "models/branches_normals.jpeg" ]))
+        .map(texture => {
+            texture.colorSpace = Three.SRGBColorSpace
+            return texture
+        })
+
 
         
+       const dogMaterial = new Three.MeshMatcapMaterial({
+        normalMap: normalMap,
+        matcap: sampleMatCap
+    })
+    const branchMaterial = new Three.MeshMatcapMaterial({
+        normalMap: branchMap,
+        matcap: branchNormalMap
+    })
 
         model.scene.traverse((child)=>{
             if(child.name.includes('DOG')){
-                child.material = new Three.MeshMatcapMaterial({
-                    normalMap:normalMap,
-                    matcap:sampleMatCap
-
-                })
+                child.material = dogMaterial
+            }else{
+                child.material = branchMaterial
             }
         })
 
