@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { use, useEffect } from 'react'
 import {useThree} from '@react-three/fiber'
 import * as Three from 'three'
 import {useGLTF} from '@react-three/drei'
-import {OrbitControls,useTexture} from '@react-three/drei'
+import {OrbitControls,useTexture,useAnimations} from '@react-three/drei'
 
 const Dog = () => {
      useThree(({camera,scene,gl})=>{
@@ -13,6 +13,10 @@ const Dog = () => {
              })
      const model = useGLTF('/models/dog.drc.glb')
 
+     const {actions} = useAnimations(model.animations,model.scene)
+     useEffect(()=>{
+        actions["Take 001"].play()
+     },[actions])
 
          /*const texture = useTexture({ 
             normalMap:'models/dog_normals.jpg',
