@@ -80,7 +80,6 @@ useEffect(() => {
       endTrigger: "#section3",
       start: "top top",
       end: "bottom bottom",
-      markers: true,
       scrub: true
     }
   })

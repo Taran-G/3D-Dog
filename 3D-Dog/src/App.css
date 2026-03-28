@@ -31,7 +31,8 @@ section {
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: url(/background.png);
+  background-image: url(./models/background.png);
+
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.3s linear;
