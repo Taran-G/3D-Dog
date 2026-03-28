@@ -9,13 +9,13 @@ function App() {
   return (
     <main>
       <div className="images">
-          <img id='tomorrowland' src="./models/background-1015.png" alt="" />
-          <img id='navy-pier' src="./models/background-1016.png" alt="" />
-          <img id='msi-chicago' src="./models/background-1017.png" alt="" />
-          <img id='phone' src="./models/background-1018.png" alt="" />
-          <img id='kikk' src="./models/background-1019.png" alt="" />
-          <img id='kennedy' src="./models/background-1020.png" alt="" />
-          <img id='opera' src="./models/background-1021.png" alt="" />
+          <img id='tomorrowland' src="/models/background-1015.png" alt="" />
+          <img id='navy-pier' src="/models/background-1016.png" alt="" />
+          <img id='msi-chicago' src="/models/background-1017.png" alt="" />
+          <img id='phone' src="/models/background-1018.png" alt="" />
+          <img id='kikk' src="/models/background-1019.png" alt="" />
+          <img id='kennedy' src="/models/background-1020.png" alt="" />
+          <img id='opera' src="/models/background-1021.png" alt="" />
         </div>
     <Canvas
     id='canvas-elem'
