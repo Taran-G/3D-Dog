@@ -23,19 +23,18 @@ section {
   z-index: 2;
 }
 
-#canvas-elem::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
+#bg {
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
   background-image: url(/models/background.png);
-
+  
   background-repeat: no-repeat;
   background-size: cover;
-  transition: all 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 #section1 {
@@ -165,8 +164,7 @@ section {
   }
 }
 
-main:has(#section2 .title:hover) #canvas-elem::after {
-  opacity: 0;
+main:has(#section2 .title:hover) #bg {  opacity: 0;
 }
 
 .images {

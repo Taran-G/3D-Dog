@@ -8,6 +8,7 @@ function App() {
 
   return (
     <main>
+      <div id="bg"></div>
       <div className="images">
           <img id='tomorrowland' src="/models/background-1015.png" alt="" />
           <img id='navy-pier' src="/models/background-1016.png" alt="" />
@@ -17,8 +18,10 @@ function App() {
           <img id='kennedy' src="/models/background-1020.png" alt="" />
           <img id='opera' src="/models/background-1021.png" alt="" />
         </div>
+        
     <Canvas
     id='canvas-elem'
+    gl={{ alpha: true }}
     style ={{
       height:'100vh',
       width:'100vw',
